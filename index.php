@@ -36,7 +36,7 @@
 						type="text"
 						placeholder="Looking for a subtitle?"
 					/>
-					<a class="about-white" href="/about-us"><h1>ABOUT US</h1></a>
+					<a class="about-white" href="/about-us"><h1 style="font-size: 30px;">ABOUT US</h1></a>
 				</div>
 			</div>
 		</div>

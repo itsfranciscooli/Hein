@@ -1,4 +1,27 @@
+.about-white{
+ color: white;
+ margin-top: 5px;
+
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(222, 222, 222);
+  font-size: 20px;
+}
+
 .search-subtitles-w {
+  margin-top: 8px;
   border: none;
   border-style: solid;
   border-top: 1px;
@@ -9,6 +32,7 @@
 }
 
 .search-subtitles-b {
+  margin-top: 8px;
   border: none;
   border-style: solid;
   border-top: 1px;

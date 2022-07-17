@@ -74,6 +74,7 @@ if(isset($_GET['remover'])){
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top" style="background: rgb(17,17,17) !important;">
                     <div class="container-fluid"></div>
+                    <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Pesquisa" /><button style="margin-right: 15px;" class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">

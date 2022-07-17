@@ -117,7 +117,7 @@ if(isset($_GET['remover'])){
                                                 <div class="mb-3"><label class="form-label" for="username"><strong>Link do Vídeo</strong><br></label><input class="form-control" type="text" id="username-1" placeholder="Link do Vídeo" name="link_vimeo"></div>
                                             </div>
                                             <div class="col">
-                                                <div class="mb-3"><label class="form-label" for="username"><strong>Link do Web</strong><br></label><input name="link_web" placeholder="Link do Web" class="form-control"></div>
+                                                <div class="mb-3"><label class="form-label" for="username"><strong>Link Arquivo</strong><br></label><input name="link_web" placeholder="Link Arquivo" class="form-control"></div>
                                             </div>
                                         </div>
                                         <div class="row">

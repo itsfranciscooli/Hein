@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+    require_once("connection.php");     
+?>
 <head>
     <meta charset="utf-8">
 <link rel="stylesheet" href="https://use.typekit.net/bny3vma.css">

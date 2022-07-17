@@ -16,62 +16,57 @@
         <div class="row">
             <div class="col"><a href="/"><img class="logo" src="assets/img/branding/hein_black.png" width="" style="margin-top: 8px;" alt="Hein"></a></div>
             <div class="col-md-6 align-self-center" style="text-align: right;"><i class="fa fa-search" style="color: black;"></i> 
-<input class="search-subtitles-b" type="text" placeholder="Looking for a subtitle?"/>
+
+<?php 
+    include 'php_functions.php';
+    echo search_bar();
+?>
 <a class="about-black" href="/about-us"><h1 style="font-size: 30px;">ABOUT US</h1></a>
 </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 35px;">
-        <div class="row">
-            <div class="col-md-6 text-end align-self-center"><img src="assets/img/slider/tatiana-julien-1.jpg" width="50%" style="border-radius: 114px;"></div>
-            <div class="col-md-6 align-self-center">
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;font-weight: 400;font-weight: 400;">Title:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Duration:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Director:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Year:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Language:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Category:<br></h1>
+
+<?php
+    require_once("connection.php");
+    $sql="SELECT * FROM projects";
+
+    if (isset($_GET["search_box"])) {
+        $field = "\"" . $_GET["search_box"]. "\"";
+        $sql = "SELECT * From projects WHERE (language LIKE ".$field." OR year LIKE ".$field." OR name LIKE ".$field.")";
+        $query=mysqli_query($con, $sql) or die($sql);
+        while ($row = mysqli_fetch_assoc($query))
+        {
+            $name = $row['name'];
+            $year = $row['year'];
+            $duration = $row['duration'];
+            $director = $row['director'];
+            $operator = $row['operator'];
+            $language = $row['language'];
+            $category = $row['category'];
+            $image = $row['thumbnail'];
+        ?>
+            <div class="container" style="margin-top: 35px;">
+            <div class="row">
+                <div class="col-md-6 text-end align-self-center"><img src=<?php echo $image ?> width="50%" style="border-radius: 114px;"></div>
+                <div class="col-md-6 align-self-center">
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;font-weight: 400;font-weight: 400;">Title: <?php echo $name ?><br></h1>
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Duration: <?php echo $duration ?></h1>
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Director: <?php echo $director ?></h1>
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Year: <?php echo $year ?></h1>
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Language: <?php echo $language ?></h1>
+                    <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Category: <?php echo $category ?></h1>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 35px;">
-        <div class="row">
-            <div class="col-md-6 text-end align-self-center"><img src="assets/img/slider/tatiana-julien-1.jpg" width="50%" style="border-radius: 114px;"></div>
-            <div class="col-md-6 align-self-center">
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;/*font-weight: 400;*/">Title:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Duration:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Director:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Year:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Language:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Category:<br></h1>
             </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 35px;">
-        <div class="row">
-            <div class="col-md-6 text-end align-self-center"><img src="assets/img/slider/tatiana-julien-1.jpg" width="50%" style="border-radius: 114px;"></div>
-            <div class="col-md-6 align-self-center">
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;font-weight: 400;font-weight: 400;">Title:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Duration:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Director:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Year:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Language:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Category:<br></h1>
-            </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 35px;">
-        <div class="row">
-            <div class="col-md-6 text-end align-self-center"><img src="assets/img/slider/tatiana-julien-1.jpg" width="50%" style="border-radius: 114px;"></div>
-            <div class="col-md-6 align-self-center">
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;font-weight: 400;font-weight: 400;">Title:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Duration:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Director:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Year:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Language:<br></h1>
-                <h1 class="fw-bold" style="font-size: 19.88px;font-family: aktiv-grotesk, sans-serif;">Category:<br></h1>
-            </div>
-        </div>
+        <?php
+        }      
+    }
+?>
+
+
+
+  
+
+
+
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>

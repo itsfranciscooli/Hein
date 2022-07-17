@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+    require_once("connection.php");
+    $sql="SELECT * FROM projects";
+    $query=mysqli_query($con, $sql) or die($sql);
+?>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -30,12 +35,10 @@
 					class="col-md-6 align-self-center"
 					style="text-align: right; width: 249.6px"
 				>
-					<i class="fa fa-search" style="color: white"></i>
-					<input
-						class="search-subtitles-w"
-						type="text"
-						placeholder="Looking for a subtitle?"
-					/>
+				<?php 
+					include 'php_functions.php';
+					echo search_bar();
+				?>
 					<a class="about-white" href="/about-us"><h1 style="font-size: 30px;">ABOUT US</h1></a>
 				</div>
 			</div>
@@ -53,7 +56,7 @@
 					/>
 				</div>
 				<div class="carousel-item">
-					<h1 class="tx1-slider">This is tx1</h1>
+					<h1 class="tx1-slider">This is tx15</h1>
 					<h1 class="tx2-slider">Tx2 box</h1>
 					<img
 						class="image-slide"
@@ -63,7 +66,7 @@
 					/>
 				</div>
 				<div class="carousel-item">
-					<h1 class="tx1-slider">This is tx1</h1>
+					<h1 class="tx1-slider">This is tx13</h1>
 					<h1 class="tx2-slider">Tx2 box</h1>
 					<img
 						class="image-slide"

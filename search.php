@@ -29,8 +29,8 @@
     $sql="SELECT * FROM projects";
 
     if (isset($_GET["search_box"])) {
-        $field = "\"" . $_GET["search_box"]. "\"";
-        $sql = "SELECT * From projects WHERE (language LIKE ".$field." OR year LIKE ".$field." OR name LIKE ".$field.")";
+        $field = $_GET["search_box"];
+        $sql = "SELECT * From projects WHERE (name LIKE \"%".$field."%\" OR year LIKE \"%".$field."%\" OR category LIKE \"%".$field."%\")";
         $query=mysqli_query($con, $sql) or die($sql);
         while ($row = mysqli_fetch_assoc($query))
         {
